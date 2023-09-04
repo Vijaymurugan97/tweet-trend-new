@@ -5,13 +5,25 @@ pipeline {
             label 'maven-slave'
         }
     }
-
+environment {
+        PATH = "/opt/apache-maven-3.9.2/bin:$PATH"
+}
+    
     stages {
-        stage('Clone code') {
+        stage("build") {
             steps {
-                git branch: 'main', url: 'https://github.com/Vijaymurugan97/tweet-trend-new.git'
+                 echo "--------Build started---------"
+               sh 'mvn clean deploy -Dmaven.test.skip=true' 
+                echo "--------Build  completed---------"
             }
       }
+            stage("test"){
+                steps{
+                    echo "--------unit test started---------"
+                    sh 'mvn surefire-report:report'
+                    echo "--------unit test completed---------"
+                } 
+            }
             stage('SonarQube analysis') {
             environment{
             scannerHome = tool 'ttrend-sonar-scanner'
