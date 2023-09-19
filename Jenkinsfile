@@ -97,7 +97,9 @@ environment {
 
     stage ("Deploy"){
       steps {
-        script './deploy.sh'
-      }
+       script{
+
+        sh './deploy.sh'
+       }}
     }
     }}
