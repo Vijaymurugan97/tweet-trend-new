@@ -99,7 +99,7 @@ environment {
       steps {
        script {
 
-        sh '/home/ubuntu/kubernets/deploy.sh'
+        sh ./deploy.sh
        }
       }
     }
