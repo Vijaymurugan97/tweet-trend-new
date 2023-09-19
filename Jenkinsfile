@@ -97,9 +97,11 @@ environment {
 
     stage ("Deploy"){
       steps {
-       script{
+       script {
 
-        sh './deploy.sh'
-       }}
+        sh '/home/ubuntu/kubernets/deploy.sh'
+       }
+      }
     }
-    }}
+  } 
+}
