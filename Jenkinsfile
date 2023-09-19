@@ -94,4 +94,10 @@ environment {
             }
         }
     }
+
+    stage ("Deploy"){
+      steps {
+        script './deploy.sh'
+      }
+    }
     }}
