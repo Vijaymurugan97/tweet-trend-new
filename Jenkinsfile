@@ -103,6 +103,5 @@ environment {
        }
       }
     }
-    }
   } 
 }
