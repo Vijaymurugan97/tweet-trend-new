@@ -95,11 +95,11 @@ environment {
         }
     }
 
-   stage("Deploy"){
+   stage("Execute Deploy.sh"){
       steps {
-       script {
-        
-        sh './deploy.sh'
+          script {
+             echo '<----------Running Deploy.sh---------->'
+             sh './deploy.sh'
        }
       }
     }
