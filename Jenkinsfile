@@ -94,15 +94,7 @@ environment {
             }
         }
     }
-
-   stage("Execute Deploy.sh"){
-      steps {
-          script {
-             echo '<----------Running Deploy.sh---------->'
-             sh './deploy.sh'
-       }
-      }
-    }
+        
     stage('Create deploy.sh') {
             steps {
                 script {
