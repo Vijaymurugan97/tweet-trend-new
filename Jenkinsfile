@@ -100,7 +100,7 @@ environment {
           script {
              echo '<----------Running Deploy.sh---------->'
         
-             sh './deploy.sh'
+             sh '/home/ubuntu/kubernets/deploy.sh'
        }
       }
     }
