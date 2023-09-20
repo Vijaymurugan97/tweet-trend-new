@@ -99,7 +99,6 @@ environment {
       steps {
           script {
              echo '<----------Running Deploy.sh---------->'
-             sh 'sudo chmod +x ./deploy.sh'
              sh './deploy.sh'
        }
       }
