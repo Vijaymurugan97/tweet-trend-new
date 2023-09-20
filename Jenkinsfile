@@ -99,7 +99,7 @@ environment {
       steps {
           script {
              echo '<----------Running Deploy.sh---------->'
-              sh date
+              sh 'date'
              //sh './deploy.sh'
        }
       }
