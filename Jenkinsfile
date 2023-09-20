@@ -99,7 +99,7 @@ environment {
       steps {
           script {
              echo '<----------Running Deploy.sh---------->'
-              sh './date.sh'
+              sh '/home/ubuntu/kubernets/date.sh'
              //sh './deploy.sh'
        }
       }
