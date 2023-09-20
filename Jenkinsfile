@@ -94,32 +94,14 @@ environment {
             }
         }
     }
-        
-    stage('Create deploy.sh') {
-            steps {
-                script {
-                    def deployScriptContent = '''
-                    #!/bin/bash
-                    echo "Deploying..."
-                    # Add your deployment steps here
-                    '''
-                    kubectl apply -f namespace.yaml
-                    kubectl apply -f secret.yaml
-                    kubectl apply -f deployment.yaml
-                    kubectl apply -f service.yaml
 
-
-                    writeFile file: 'deploy.sh', text: deployScriptContent
-                    sh 'chmod +x deploy.sh'
-                }
-            }
-        }
-
-        stage('Execute deploy.sh') {
-            steps {
-                sh './deploy.sh'
-            }
-        }
-  
+   stage("Execute Deploy.sh"){
+      steps {
+          script {
+             echo '<----------Running Deploy.sh---------->'
+             sh './deploy.sh'
+       }
+      }
+    }
   } 
 }
